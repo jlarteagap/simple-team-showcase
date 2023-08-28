@@ -10,21 +10,31 @@ Version:1.1.0
 
 // Simple data from plugin
 
-define( 'TEAM_PATH', plugin_dir_path( __FILE__ ) );
-add_action('init', 'create_team');
-function create_team(){
-    register_post_type('team', array(
-        'label' => 'Team',
-        'show_ui' => true,
-        'support' => array('title', 'editor', 'thumbnail', 'page-attibutes'),
-        'labels' => array(
-            'name' => 'Teams',
-            'singular_name' => 'Team',
-            'menu_name' => 'Teams'
-        ),
-        ));
+class Team {
+    function __construct(){
+        define( 'TEAM_PATH', plugin_dir_path( __FILE__ ) );
+        define( 'TEAM_URL', plugin_dir_url( __FILE__ ));
+    }
 }
 
+
+
+add_action( 'init', 'create_sm_team' );
+function create_sm_team() {
+register_post_type('team', 
+  array(
+      'label'   => 'Team',
+      'show_ui'   => true,
+      'supports'  => array('title','editor','thumbnail','page-attributes'),
+      'menu_icon' => 'dashicons-groups',
+      'labels'  => array (
+              'name'      => 'Teams',
+              'singular_name' => 'Team',
+              'menu_name'   => 'Team'
+      ),
+  ) 
+);
+}
 function add_team_member_metabox(){
     add_meta_box(
       'team_member_meta',
@@ -141,10 +151,10 @@ function team_member_meta_save($post_id){
       return;
     }
     // member Personal Information and Image
-    // if(isset($_POST['member_image'])){
-    //   // update_post_meta($post_id,'member_image',($_POST['member_image']));
-    //   update_post_meta($post_id,'member_image',sanitize_text_field($_POST['member_image']));
-    // }
+    if(isset($_POST['member_image'])){
+      // update_post_meta($post_id,'member_image',($_POST['member_image']));
+      update_post_meta($post_id,'member_image',sanitize_text_field($_POST['member_image']));
+    }
     if(isset($_POST['short_bio'])){
       update_post_meta($post_id,'short_bio',sanitize_text_field($_POST['short_bio']));
     }
@@ -221,4 +231,5 @@ function team_custom_columns_data( $column, $post_id ) {
 }
 add_action( 'manage_posts_custom_column' , 'team_custom_columns_data', 10, 2 ); 
 
+require(TEAM_PATH.'inc/team-settings.php'); 
 require(TEAM_PATH.'inc/team-shortcode.php');
