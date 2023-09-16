@@ -13,17 +13,20 @@ class Team {
     function __construct(){
         define( 'TEAM_PATH', plugin_dir_path( __FILE__ ) );
         define( 'TEAM_URL', plugin_dir_url( __FILE__ ));
-    
 
     require(TEAM_PATH.'inc/class/team-post-type.php'); 
     require(TEAM_PATH.'inc/class/team-post-meta.php');
     require(TEAM_PATH.'inc/team-settings.php'); 
     require(TEAM_PATH.'inc/team-shortcode.php');
 
+    add_action( 'wp_enqueue_scripts', array($this,'team_scripts_enqueue' ));
     add_action( 'admin_enqueue_scripts', array($this,'team_scripts_enqueue' ));
 }
 
 public function team_scripts_enqueue(){
+    wp_register_style( 'custom-css', TEAM_URL.'/css/custom.css', false, null, 'all' );
+
+    wp_enqueue_style( 'custom-css' );
     do_action('team_action_scripts_enqueue');
 }
 }

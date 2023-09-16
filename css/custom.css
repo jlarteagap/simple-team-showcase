@@ -1,0 +1,17 @@
+.sts__content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+}
+.sts__item{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.sts__image-img{
+    border-radius: 50%;
+}
+.sts__info{
+    text-align: center;
+}
+.sts__name{}
