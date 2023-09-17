@@ -24,9 +24,11 @@ class Team {
 }
 
 public function team_scripts_enqueue(){
-    wp_register_style( 'custom-css', TEAM_URL.'/css/custom.css', false, null, 'all' );
+    wp_register_script('config', TEAM_URL.'/js/config.js', false, null, true);
+    wp_register_style( 'style', TEAM_URL.'/css/custom.css', false, null, 'all' );
 
-    wp_enqueue_style( 'custom-css' );
+    wp_enqueue_script('config');
+    wp_enqueue_style( 'style' );
     do_action('team_action_scripts_enqueue');
 }
 }

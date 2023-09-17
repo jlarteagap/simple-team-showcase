@@ -11,8 +11,8 @@
             <h4 class="sts__name"><?php the_title(); ?></h4>
             <p class="sts__name-designation"><?php echo $meta->member_designation[0]; ?></p>
           </div>
-          <button>Ver mas</button>
-          <?php the_content() ?>
+          <button class="btn btn__seemore" data-id="<?php the_ID(); ?>">Ver mas</button>
+         <div class="sts__resume" style="display:none" data-id="<?php the_ID(); ?>"><?php the_content() ?></div>
         </div>
         <?php endwhile;
         wp_reset_postdata(); ?>
