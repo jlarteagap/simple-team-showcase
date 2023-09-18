@@ -12,7 +12,12 @@
             <p class="sts__name-designation"><?php echo $meta->member_designation[0]; ?></p>
           </div>
           <button class="btn btn__seemore" data-id="<?php the_ID(); ?>">Ver mas</button>
-         <div class="sts__resume" style="display:none" data-id="<?php the_ID(); ?>"><?php the_content() ?></div>
+         <div class="sts__resume" style="display: none" data-id="<?php the_ID(); ?>">
+          <div class="sts__modal">
+            <div class="sts__modal__content"><?php the_content() ?>
+            <button href="#" class="sts__modal__close" data-id="<?php the_ID(); ?>">&times;</button></div>
+          </div> 
+         </div>
         </div>
         <?php endwhile;
         wp_reset_postdata(); ?>

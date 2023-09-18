@@ -14,4 +14,33 @@
 .sts__info{
     text-align: center;
 }
-.sts__name{}
+
+.sts__modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+}
+.sts__modal__content {
+    background: #fff;
+    border-radius: 4px;
+    max-width: 90%;
+    padding: 1em 2em;
+    position: relative;
+    width: 80%;
+  }
+
+  .sts__modal__close {
+    color: #585858;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    top: 10px;
+  }
