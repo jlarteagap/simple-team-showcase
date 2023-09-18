@@ -11,7 +11,7 @@
             <h4 class="sts__name"><?php the_title(); ?></h4>
             <p class="sts__name-designation"><?php echo $meta->member_designation[0]; ?></p>
           </div>
-          <button class="btn btn__seemore" data-id="<?php the_ID(); ?>">Ver mas</button>
+          <button class="btn btn__seemore" data-id="<?php the_ID(); ?>">Ver perfil</button>
          <div class="sts__resume" style="display: none" data-id="<?php the_ID(); ?>">
           <div class="sts__modal">
             <div class="sts__modal__content"><?php the_content() ?>
