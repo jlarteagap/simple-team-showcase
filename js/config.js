@@ -1,19 +1,18 @@
 const stsButton = document.querySelectorAll('.btn__seemore')
+const stsResume = document.querySelectorAll('.sts__resume')
+
+let buttonClick = ""
 
 stsButton.forEach(listen => {
-    let buttonClick = ""
     listen.addEventListener('click',  ({target:{dataset: {id}}})=> {
-       buttonClick = id
-       console.log(buttonClick)
+        showContent(id)
     })
-
-
 })
-// const showContent =() => {
-//     console.log(event.target.dataset.id)
-//     console.log('Click')
-//     const stsResume = document.querySelectorAll('.sts__resume')
-//     stsResume.forEach(resume => {
-//         console.log(resume)
-//     })
-// }
+
+const showContent = (idContent) => {
+    stsResume.forEach(resume => {
+        if (resume.dataset.id === idContent) {
+            resume.style.display = 'block'; // Cambiar a 'block' para mostrar
+        }
+    })
+}
