@@ -29,8 +29,22 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.sts__image{
+    position: relative;
+}
 .sts__image-img{
     border-radius: 50%;
+}
+
+.sts__image-icon{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
+.sts__image-icon img{
+    object-fit: cover;
 }
 .sts__info{
     text-align: center;

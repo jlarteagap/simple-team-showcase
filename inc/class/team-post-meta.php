@@ -54,8 +54,13 @@ class TeamPostMeta
 	              <input class="sts__admin-input" type="text" id="member_designation" name="member_designation" placeholder="Designation" value="<?php echo $member_designation; ?>" />
 
     
-	            <label for="member_location" class="control-label col-xs-2">Location </label>
-	              <input class="sts__admin-input" type="text" id="member_location" name="member_location" placeholder="member Location" value="<?php echo $member_location; ?>"  />
+				<label for="member_location" class="control-label col-xs-2">Country</label>
+				<select id="member_location" class="sts__admin-input" name="member_location">
+					<option value="AR" <?php if($member_location == 'AR') echo 'selected'; ?>>Argentina</option>
+					<option value="BO" <?php if($member_location == 'BO') echo 'selected'; ?>>Bolivia</option>
+					<option value="BR" <?php if($member_location == 'BR') echo 'selected'; ?>>Brasil</option>
+					<option value="PE" <?php if($member_location == 'PE') echo 'selected'; ?>>Perú</option>
+				</select>
 			</div>   
 	      </div>
 	      <div class="row" style="margin:0px">
