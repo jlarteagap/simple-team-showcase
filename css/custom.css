@@ -1,3 +1,19 @@
+.sts__admin__content{
+    width: 100%;
+}
+
+.sts__admin-input{
+    width: 100%;
+}
+.sts__admin__content__info{
+    display: flex;
+    gap: 1rem;
+}
+.sts__admin__content__info-item{
+    flex: 1 1 0px;
+}
+
+/* fronend  */
 .sts__content{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
